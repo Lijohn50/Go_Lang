@@ -18,12 +18,12 @@ int main() {
                 sol[i][j] = 1;
             }else{
                 
-                if(coin[i] < j){
+                if(coin[i-1] < j){
                     
                     sol[i][j] = sol[i-1][j];
                 }else{
                     
-                    sol[i][j] = sol[i - 1][j] + sol[i][j - coin[i]];
+                    sol[i][j] = sol[i - 1][j] + sol[i][j - coin[i-1]];
                 }
             }
         }
@@ -31,4 +31,5 @@ int main() {
     
     cout << sol[3][8];
     return 0;
+
 }
